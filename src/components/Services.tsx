@@ -1,21 +1,53 @@
+"use client"
 import { Package, Truck, BarChart } from "lucide-react"
+import { motion } from "framer-motion"
+import { useInView } from "framer-motion"
+import { useRef } from "react"
 
 export default function Services() {
+    const containerRef = useRef(null)
+    const isInView = useInView(containerRef, { once: true, amount: 0.1 })
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: (i: number) => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: i * 0.2,
+                duration: 0.5,
+            },
+        }),
+    }
+
     return (
         <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-                <h2 className="text-4xl font-bold text-slate-800 mb-4">
-                    Aqui na <span className="text-orange-500">SFlog</span> quem controla é você!
-                </h2>
+            <motion.div
+                ref={containerRef}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-10"
+            >
+                <h1 className="text-4xl font-bold text-slate-800 mb-4">
+                    Aqui na <span className="text-orange-500">S&Flog</span> quem controla é você!
+                </h1>
                 <p className="text-gray-600 max-w-4xl mx-auto">
                     Conheça um pouco mais dos nossos serviços de transporte de cargas. Por favor, verifique nossa área de atuação
                     e as regiões que atendemos!
                 </p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                 {/* Card 1 - Frete Fracionado */}
-                <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <motion.div
+                    variants={cardVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    custom={0}
+                    whileHover={{ scale: 1.02 }}
+                    className="bg-white rounded-lg shadow-sm p-6 border border-gray-100"
+                >
                     <div className="flex items-start mb-4">
                         <div className="bg-orange-500 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                             <Package className="text-white w-6 h-6" />
@@ -24,9 +56,9 @@ export default function Services() {
                     </div>
 
                     <p className="text-gray-700 mb-6">
-                        Perfeito para cargas menores! Com o frete fracionado, você compartilha o espaço do caminhão com outras
-                        cargas, pagando apenas pela parte que ocupa. É uma ótima opção para economizar custos, especialmente para
-                        remessas menores ou que não ocupam o veículo inteiro.
+                        Ideal para cargas menores! No frete fracionado, sua mercadoria compartilha o espaço do veículo com outras
+                        cargas, tornando o custo mais acessível. É a solução perfeita para quem precisa enviar volumes menores
+                        sem comprometer a qualidade do serviço.
                     </p>
 
                     <div className="flex items-start text-gray-600 text-sm">
@@ -39,12 +71,19 @@ export default function Services() {
                         >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                         </svg>
-                        <p>Economia compartilhada de espaço, vantajoso para remessas pequenas e diversificadas.</p>
+                        <p>Custo-benefício ideal para cargas menores, com a mesma qualidade e segurança.</p>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Card 2 - Frete Dedicado */}
-                <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <motion.div
+                    variants={cardVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    custom={1}
+                    whileHover={{ scale: 1.02 }}
+                    className="bg-white rounded-lg shadow-sm p-6 border border-gray-100"
+                >
                     <div className="flex items-start mb-4">
                         <div className="bg-orange-500 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                             <Truck className="text-white w-6 h-6" />
@@ -53,9 +92,9 @@ export default function Services() {
                     </div>
 
                     <p className="text-gray-700 mb-6">
-                        Prioridade total para sua carga! Com o frete dedicado, você tem um veículo exclusivo para suas necessidades.
-                        Isso significa que sua carga recebe atenção individualizada, garantindo rapidez, segurança e flexibilidade
-                        no transporte. É a escolha ideal para remessas que exigem prazos precisos e cuidados especiais.
+                        Prioridade total para sua carga! No frete dedicado, o veículo é exclusivo para seu transporte, garantindo
+                        maior agilidade e controle. Ideal para cargas maiores ou que exigem cuidados especiais, oferecendo
+                        tranquilidade e eficiência no transporte.
                     </p>
 
                     <div className="flex items-start text-gray-600 text-sm">
@@ -68,14 +107,19 @@ export default function Services() {
                         >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                         </svg>
-                        <p>
-                            Exclusividade, personalização e eficiência na entrega, respeitando as necessidades únicas de cada carga!
-                        </p>
+                        <p>Veículo exclusivo para sua carga, com maior controle e agilidade no transporte.</p>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Card 3 - Redespachos */}
-                <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <motion.div
+                    variants={cardVariants}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    custom={2}
+                    whileHover={{ scale: 1.02 }}
+                    className="bg-white rounded-lg shadow-sm p-6 border border-gray-100"
+                >
                     <div className="flex items-start mb-4">
                         <div className="bg-orange-500 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                             <BarChart className="text-white w-6 h-6" />
@@ -102,7 +146,7 @@ export default function Services() {
                         </svg>
                         <p>Otimização de rotas e custos para alcançar destinos mais distantes com eficiência.</p>
                     </div>
-                </div>
+                </motion.div>
             </div>
 
             <div className="flex flex-col items-center mb-8">

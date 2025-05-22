@@ -27,7 +27,7 @@ export default function Whatsapp() {
                     <p className="text-gray-700 mb-8 text-center lg:text-left">
                         Comprometidos em fornecer fretes e transporte de cargas que atendam às necessidades dos clientes. Oferecemos
                         flexibilidade, qualidade e segurança em cada etapa da jornada. O atendimento personalizado é o que nos
-                        destaca, garantindo a satisfação dos clientes. A frota da SFlog é 100% própria, com veículos rastreados,
+                        destaca, garantindo a satisfação dos clientes. A frota da S&Flog é 100% própria, com veículos rastreados,
                         higienizados, revisados e assegurados constantemente. Possuem frota composta por veículos que vão desde
                         utilitários a trucks, com capacidade de carga até 13.500kg.
                     </p>

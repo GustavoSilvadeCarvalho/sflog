@@ -15,7 +15,7 @@ export default function Hero() {
                 </p>
                 <div className="flex mt-2 sm:mt-4 space-x-2 sm:space-x-4 flex-wrap gap-2">
                     <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-3 sm:py-2 sm:px-4 rounded-2xl flex items-center text-sm sm:text-base">
-                        <a href="https://wa.me/5519999158816" className="flex items-center text-sm sm:text-base">
+                        <a href="https://wa.me/5519999158816" className="flex items-center text-sm sm:text-base" target="_blank">
                             <Image src="/whatsapp.png" alt="WhatsApp" width={20} height={20} className="inline-block mr-2" />
                             Entre em Contato
                         </a>

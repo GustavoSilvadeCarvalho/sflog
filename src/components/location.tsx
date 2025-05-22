@@ -4,9 +4,9 @@ export default function Location() {
     return (
         <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-slate-800 mb-4">
-                    Onde encontrar a <span className="text-orange-500">SFlog</span>
-                </h2>
+                <h1 className="text-4xl font-bold text-slate-800 mb-4">
+                    Onde encontrar a <span className="text-orange-500">S&Flog</span>
+                </h1>
                 <p className="text-gray-600 max-w-3xl mx-auto">
                     Visite nossa sede ou entre em contato conosco. Estamos sempre prontos para atender suas necessidades de
                     transporte e logística.
